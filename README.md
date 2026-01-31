@@ -9,7 +9,6 @@ Ce projet est le **douzième** du défi personnel **100 projets en 2026**.
 
 ## Objectifs du projet
 - Créer une application orientée bien-être
-- Gérer des données associées à des dates
 - Implémenter un CRUD simple en local
 - Concevoir une UX calme et introspective
 
@@ -29,9 +28,7 @@ Ce projet est le **douzième** du défi personnel **100 projets en 2026**.
 
 ## Fonctionnalités
 - Ajouter une note de gratitude
-- Association automatique à la date du jour
 - Consultation des entrées précédentes
-- Suppression d’une entrée
 - Sauvegarde locale automatique
 
 ---
@@ -49,7 +46,6 @@ Ce projet est le **douzième** du défi personnel **100 projets en 2026**.
 ---
 
 ## Ce que j’ai appris
-- Gestion des dates en Flutter
 - Persistance de données locales
 - Structuration d’un CRUD simple
 - Conception d’une UX émotionnelle
