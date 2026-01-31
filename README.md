@@ -45,7 +45,6 @@ Ce projet est le **douzième** du défi personnel **100 projets en 2026**.
 ---
 
 ## Captures d’écran
-_Ajouter des captures de l’application ici_
 
 ---
 

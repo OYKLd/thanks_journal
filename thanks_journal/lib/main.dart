@@ -14,37 +14,39 @@ class GratitudeJournalApp extends StatelessWidget {
       title: 'Journal de Gratitude',
       theme: ThemeData(
         colorScheme: ColorScheme.light(
-          primary: const Color(0xFFB3C2BF), // bleu/gris pastel
-          background: const Color(0xFFF6F5F2), // beige très clair
-          secondary: const Color(0xFFD9D9D6), // gris doux
+          primary: const Color(0xFF3A5A40), // vert sauge profond
+          secondary: const Color(0xFFD4A373), // doré chaud
+          background: const Color(0xFFFDF6EC), // crème chaud
         ),
-        scaffoldBackgroundColor: const Color(0xFFF6F5F2),
+        scaffoldBackgroundColor: const Color(0xFFFDF6EC),
         fontFamily: 'Nunito',
         textTheme: const TextTheme(
-          bodyLarge: TextStyle(fontSize: 20, color: Color(0xFF444444)),
-          bodyMedium: TextStyle(fontSize: 16, color: Color(0xFF444444)),
+          bodyLarge: TextStyle(fontSize: 20, color: Color(0xFF2F3E46)),
+          bodyMedium: TextStyle(fontSize: 16, color: Color(0xFF2F3E46)),
         ),
         inputDecorationTheme: InputDecorationTheme(
           filled: true,
-          fillColor: Color(0xFFF0EFEB),
+          fillColor: const Color(0xFFF1EDE4),
+          hintStyle: const TextStyle(color: Color(0xFF8A817C)),
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(18),
             borderSide: BorderSide.none,
           ),
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            backgroundColor: const Color(0xFFB3C2BF),
+            backgroundColor: const Color(0xFF3A5A40),
             foregroundColor: Colors.white,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(18),
             ),
-            elevation: 0,
+            elevation: 2,
             textStyle: const TextStyle(
               fontSize: 16,
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 0.5,
             ),
-            padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+            padding: const EdgeInsets.symmetric(horizontal: 36, vertical: 14),
           ),
         ),
       ),
@@ -84,11 +86,11 @@ class _GratitudeHomePageState extends State<GratitudeHomePage> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               const Text(
-                'Bonjour, de quoi es-tu reconnaissant aujourd’hui ?',
+                'Bonjour 🌿\nDe quoi es-tu reconnaissant aujourd’hui ?',
                 style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.w600,
-                  color: Color(0xFF444444),
+                  fontSize: 24,
+                  fontWeight: FontWeight.w700,
+                  color: Color(0xFF3A5A40),
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -99,7 +101,7 @@ class _GratitudeHomePageState extends State<GratitudeHomePage> {
                 maxLines: 5,
                 style: const TextStyle(fontSize: 18),
                 decoration: const InputDecoration(
-                  hintText: 'Écris ici ta gratitude du jour…',
+                  hintText: 'Note ici un moment, une personne, une émotion…',
                 ),
               ),
               const SizedBox(height: 16),
@@ -116,30 +118,37 @@ class _GratitudeHomePageState extends State<GratitudeHomePage> {
                   'Tes gratitudes précédentes',
                   style: TextStyle(
                     fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                    color: Color(0xFF888888),
+                    fontWeight: FontWeight.w600,
+                    color: Color(0xFF6B705C),
                   ),
-                  textAlign: TextAlign.left,
                 ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 12),
               Expanded(
                 child: _entries.isEmpty
                     ? const SizedBox.shrink()
                     : ListView.separated(
                         itemCount: _entries.length,
-                        separatorBuilder: (_, __) => const SizedBox(height: 12),
+                        separatorBuilder: (_, __) =>
+                            const SizedBox(height: 14),
                         itemBuilder: (context, index) {
                           return Container(
-                            padding: const EdgeInsets.all(16),
+                            padding: const EdgeInsets.all(18),
                             decoration: BoxDecoration(
-                              color: const Color(0xFFF0EFEB),
-                              borderRadius: BorderRadius.circular(14),
+                              color: const Color(0xFFF1EDE4),
+                              borderRadius: BorderRadius.circular(18),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.05),
+                                  blurRadius: 6,
+                                  offset: const Offset(0, 3),
+                                ),
+                              ],
                             ),
                             child: Text(
                               _entries[index],
                               style: const TextStyle(
                                 fontSize: 16,
-                                color: Color(0xFF444444),
+                                color: Color(0xFF344E41),
                               ),
                             ),
                           );
